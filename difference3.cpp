@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+
+    vector<int>ans;
+    vector<int>ans2;
+
+    int arr[n];
+
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+
+    int m;
+    cin>>m;
+    int flag=0;
+
+    int arr2[m];
+
+    for(int i=0;i<m;i++){
+        cin>>arr2[i];
+    }
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(arr[i]==arr2[j]){
+                ans.push_back(arr[i]);
+                break;
+            }
+        }
+    }
+
+    // for(int i=0;i<ans.size();i++){
+    //     cout<<ans[i]<<" ";
+    // }
+
+    for(int i=0;i<n;i++){
+        flag=0;
+        for(int j=0;j<ans.size();j++){
+            if(arr[i]==ans[j]){
+                flag=1;
+            }
+        }
+
+        if(flag==0){
+            ans2.push_back(arr[i]);
+        }
+    }
+
+     for(int i=0;i<ans2.size();i++){
+        cout<<ans2[i]<<" ";
+    }
+
+    cout<<endl;
+
+    return 0;
+}
